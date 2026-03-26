@@ -1,4 +1,5 @@
 import { Activity, FileText, Users, Server } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import AdminLayout from '../components/layout/AdminLayout';
 
 const metrics = [
@@ -35,20 +36,20 @@ export default function Dashboard() {
               title="Subir Documento"
               description="Subir un nuevo PDF para extracción y análisis"
               icon={FileText}
-              href="/documents"
+              to="/documents"
             />
             <QuickAction
               title="Ver Usuarios"
               description="Gestionar usuarios y permisos de la plataforma"
               icon={Users}
-              href="#"
+              to="#"
               disabled
             />
             <QuickAction
               title="Monitorear API"
               description="Estado del backend y métricas de rendimiento"
               icon={Server}
-              href="#"
+              to="#"
               disabled
             />
           </div>
@@ -95,19 +96,36 @@ function QuickAction({
   title,
   description,
   icon: Icon,
-  href,
+  to,
   disabled,
 }: {
   title: string;
   description: string;
   icon: typeof FileText;
-  href: string;
+  to: string;
   disabled?: boolean;
 }) {
+  if (disabled) {
+    return (
+      <div className="admin-card group opacity-50 pointer-events-none">
+        <div className="flex items-center gap-4 mb-3">
+          <div className="p-2.5 rounded-xl bg-success/10 text-success">
+            <Icon size={20} />
+          </div>
+          <h3 className="text-foreground font-semibold">{title}</h3>
+        </div>
+        <p className="text-muted-foreground text-sm">{description}</p>
+        <span className="inline-block mt-3 text-[10px] uppercase tracking-wider font-bold text-muted-foreground bg-muted px-2 py-0.5 rounded">
+          Próximamente
+        </span>
+      </div>
+    );
+  }
+
   return (
-    <a
-      href={disabled ? undefined : href}
-      className={`admin-card group cursor-pointer hover:border-success/30 ${disabled ? 'opacity-50 pointer-events-none' : ''}`}
+    <Link
+      to={to}
+      className="admin-card group cursor-pointer hover:border-success/30"
     >
       <div className="flex items-center gap-4 mb-3">
         <div className="p-2.5 rounded-xl bg-success/10 text-success group-hover:bg-success/20 transition-colors">
@@ -116,12 +134,7 @@ function QuickAction({
         <h3 className="text-foreground font-semibold">{title}</h3>
       </div>
       <p className="text-muted-foreground text-sm">{description}</p>
-      {disabled && (
-        <span className="inline-block mt-3 text-[10px] uppercase tracking-wider font-bold text-muted-foreground bg-muted px-2 py-0.5 rounded">
-          Próximamente
-        </span>
-      )}
-    </a>
+    </Link>
   );
 }
 

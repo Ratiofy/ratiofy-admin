@@ -38,10 +38,10 @@ export default function DocumentIngestion() {
             color="text-foreground"
           />
           <StatsCard
-            label="Extracciones Completas"
+            label="Pendientes"
             value="Próximamente"
-            icon={Activity}
-            color="text-success"
+            icon={Upload}
+            color="text-warning"
           />
           <StatsCard
             label="En Proceso"
@@ -50,10 +50,10 @@ export default function DocumentIngestion() {
             color="text-info"
           />
           <StatsCard
-            label="Pendientes"
+            label="Extracciones Completas"
             value="Próximamente"
-            icon={Upload}
-            color="text-warning"
+            icon={Activity}
+            color="text-success"
           />
         </div>
 
