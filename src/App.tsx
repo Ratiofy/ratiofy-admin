@@ -1,7 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
 import AdminProtectedRoute from './components/auth/AdminProtectedRoute';
 import Dashboard from './pages/Dashboard';
-import DocumentIngestion from './pages/DocumentIngestion';
+import Instruments from './pages/Instruments';
+import Documents from './pages/Documents';
 import Settings from './pages/Settings';
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
       <AdminProtectedRoute>
         <Routes>
           <Route path="/" element={<Dashboard />} />
-          <Route path="/documents" element={<DocumentIngestion />} />
+          <Route path="/instruments" element={<Instruments />} />
+          <Route path="/documents" element={<Documents />} />
           <Route path="/settings" element={<Settings />} />
         </Routes>
       </AdminProtectedRoute>

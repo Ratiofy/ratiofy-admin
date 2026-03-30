@@ -6,10 +6,12 @@ import {
   LayoutDashboard,
   Settings,
   Shield,
+  SquareChartGantt,
 } from 'lucide-react';
 
 const navItems = [
   { path: '/', label: 'Dashboard', icon: LayoutDashboard },
+  { path: '/instruments', label: 'Instrumentos', icon: SquareChartGantt },
   { path: '/documents', label: 'Documentos', icon: FileText },
   { path: '/settings', label: 'Configuración', icon: Settings },
 ];
@@ -68,7 +70,7 @@ export default function Sidebar() {
           />
           <div className="flex flex-col">
             <span className="text-sm font-semibold text-foreground">Administrador</span>
-            <span className="text-xs text-muted-foreground">Gestionar cuenta</span>
+            <span className="text-xs text-muted-foreground">Próximamente...</span>
           </div>
         </div>
       </div>

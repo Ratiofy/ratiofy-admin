@@ -1,34 +1,25 @@
-import { Activity, FileText, Users, Server } from 'lucide-react';
+import { FileText, Users, Server } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AdminLayout from '../components/layout/AdminLayout';
-
-const metrics = [
-  { title: 'Documentos Totales', value: 'Próximamente', change: 'Sincroniza con API', icon: FileText },
-  { title: 'Usuarios Registrados', value: 'Próximamente', change: 'Vía Clerk', icon: Users },
-  { title: 'Extracciones Exitosas', value: 'Próximamente', change: 'Pipeline RAG', icon: Activity },
-  { title: 'Estado API', value: 'Próximamente', change: 'ratiofy-api-go', icon: Server },
-];
+import { InstrumentsCard } from '../components/dashboard/InstrumentsCard';
+import { PendingCard } from '../components/dashboard/PendingCard';
+import { PageHeader } from '../components/common/PageHeader';
 
 export default function Dashboard() {
   return (
     <AdminLayout>
       <div className="animate-fade-in">
-        {/* Header */}
-        <header className="mb-10">
-          <h1 className="text-3xl font-bold text-foreground tracking-tight mb-2">Dashboard</h1>
-          <p className="text-muted-foreground font-medium">
-            Vista general del centro de control de Ratiofy.
-          </p>
-        </header>
+        <PageHeader
+          title="Dashboard"
+          description="Vista general del centro de control de Ratiofy."
+        />
 
-        {/* Metric Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-10">
-          {metrics.map((metric) => (
-            <MetricCard key={metric.title} {...metric} />
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-10">
+          <InstrumentsCard />
+          <PendingCard title="Usuarios" />
+          <PendingCard title="Documentos" />
         </div>
 
-        {/* Quick Actions */}
         <section className="mb-10">
           <h2 className="text-xl font-bold text-foreground mb-6">Acciones Rápidas</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -37,6 +28,7 @@ export default function Dashboard() {
               description="Subir un nuevo PDF para extracción y análisis"
               icon={FileText}
               to="/documents"
+              disabled
             />
             <QuickAction
               title="Ver Usuarios"
@@ -70,25 +62,6 @@ export default function Dashboard() {
         </section>
       </div>
     </AdminLayout>
-  );
-}
-
-function MetricCard({ title, value, change, icon: Icon }: any) {
-  return (
-    <div className="metric-card group">
-      <div className="flex justify-between items-start mb-4">
-        <div className="p-2.5 rounded-xl bg-card border border-border text-muted-foreground group-hover:text-success group-hover:border-success/30 transition-colors">
-          <Icon size={22} />
-        </div>
-      </div>
-      <div>
-        <h4 className="text-muted-foreground font-medium mb-1">{title}</h4>
-        <p className={`font-bold tracking-tight text-foreground ${value === 'Próximamente' ? 'text-lg opacity-80' : 'text-3xl'}`}>
-          {value}
-        </p>
-        <p className="text-xs text-muted-foreground mt-1">{change}</p>
-      </div>
-    </div>
   );
 }
 
