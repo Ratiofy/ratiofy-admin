@@ -1,11 +1,16 @@
-export interface BaseApiResponse {
+export interface ApiResponseError {
+  message: string;
+  code: string;
+}
+
+export interface ApiResponseBase {
   success: boolean;
   data: object;
-  error: object;
+  error: ApiResponseError;
   meta: object;
 }
 
-export interface InstrumentSummaryResponse extends BaseApiResponse {
+export interface InstrumentSummaryResponse extends ApiResponseBase {
   data: {
     PENDING: number;
     PROCESSING: number;

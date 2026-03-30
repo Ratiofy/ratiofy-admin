@@ -1,30 +1,10 @@
 import { SquareChartGantt } from "lucide-react";
 import { BaseCard } from "../common/BaseCard";
-import { useEffect, useState } from "react";
-import { getInstrumentSummary } from "../../services/api";
+import { useInstrumentsSummary } from "../../hooks/useInstruments";
 
 export function InstrumentsCard() {
-  const [instrumentStats, setInstrumentStats] = useState<{
-    ACTIVE: number;
-    PENDING: number;
-    PROCESSING: number;
-    ARCHIVED: number;
-    ERROR: number;
-  } | null>(null);
 
-  useEffect(() => {
-    const fetchStats = async () => {
-      try {
-        const response = await getInstrumentSummary();
-        if (response.success) {
-          setInstrumentStats(response.data);
-        }
-      } catch (error) {
-        console.error('Error fetching instrument summary:', error);
-      }
-    };
-    fetchStats();
-  }, []);
+  const { data: instrumentStats } = useInstrumentsSummary();
 
   return (
     <BaseCard title="Instrumentos" icon={SquareChartGantt} statsDecorate={true}>
