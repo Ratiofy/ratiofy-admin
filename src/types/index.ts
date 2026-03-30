@@ -1,8 +1,8 @@
 export interface BaseApiResponse {
   success: boolean;
-  data: {};
-  error: {};
-  meta: {};
+  data: object;
+  error: object;
+  meta: object;
 }
 
 export interface InstrumentSummaryResponse extends BaseApiResponse {

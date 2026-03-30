@@ -6,7 +6,7 @@ export default function Instruments() {
         <AdminLayout>
             <PageHeader
                 title="Instrumentos"
-                description="Gestiona los parámetros globales de la plataforma Ratiofy."
+                description="Gestiona los instrumentos de la plataforma Ratiofy."
             />
         </AdminLayout>
     );

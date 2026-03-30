@@ -14,11 +14,13 @@ export default function Dashboard() {
           description="Vista general del centro de control de Ratiofy."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-10">
-          <InstrumentsCard />
-          <PendingCard title="Usuarios" />
-          <PendingCard title="Documentos" />
-        </div>
+        <section className="mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-10">
+            <InstrumentsCard />
+            <PendingCard title="Usuarios" />
+            <PendingCard title="Documentos" />
+          </div>
+        </section>
 
         <section className="mb-10">
           <h2 className="text-xl font-bold text-foreground mb-6">Acciones Rápidas</h2>
