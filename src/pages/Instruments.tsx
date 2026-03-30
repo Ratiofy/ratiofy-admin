@@ -1,12 +1,13 @@
 import AdminLayout from "../components/layout/AdminLayout";
 import { PageHeader } from "../components/common/PageHeader";
+import { CreateInstrumentForm } from "../components/instruments/CreateInstrumentForm";
 import { Archive, Cpu, LayoutList, SquareCheck } from "lucide-react";
 import { SingleStatCard } from "../components/common/SingleStatCard";
 import { useInstrumentsSummary } from "../hooks/useInstruments";
 
 export default function Instruments() {
 
-    const { data: instrumentStats } = useInstrumentsSummary();
+    const { data: instrumentStats, refetch } = useInstrumentsSummary();
 
     return (
         <AdminLayout>
@@ -14,6 +15,7 @@ export default function Instruments() {
                 title="Instrumentos"
                 description="Gestiona los instrumentos de la plataforma Ratiofy."
             />
+
             <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <SingleStatCard
                     label="Activos"
@@ -48,6 +50,15 @@ export default function Instruments() {
                     />
                 )}
             </section>
+
+            <section className="mt-8">
+                <CreateInstrumentForm onSuccess={() => refetch()} />
+            </section>
+
+            <section>
+                {/* Tabla de instrumentos */}
+            </section>
+
         </AdminLayout>
     );
 }

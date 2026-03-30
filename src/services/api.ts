@@ -1,5 +1,5 @@
 import axios from 'axios';
-import type { InstrumentSummaryResponse } from '../types';
+import type { InstrumentSummaryResponse, CreateInstrumentPayload, InstrumentResponse } from '../types';
 
 const API_BASE_URL = import.meta.env.VITE_ADMIN_API_BASE_URL || 'http://localhost:8080/api';
 
@@ -62,5 +62,10 @@ export async function getInstrumentSummary(): Promise<InstrumentSummaryResponse>
   return data;
 }
 
+export async function createInstrument(payload: CreateInstrumentPayload): Promise<InstrumentResponse> {
+  const { data } = await api.post<InstrumentResponse>('/instruments', payload);
+  return data;
+}
+
 export { api };
-export type { InstrumentSummaryResponse };
+export type { InstrumentSummaryResponse, CreateInstrumentPayload, InstrumentResponse };

@@ -19,7 +19,20 @@ export interface InstrumentSummaryResponse extends ApiResponseBase {
     ERROR: number;
   }
 }
+export interface CreateInstrumentPayload {
+  ticker: string;
+  name: string;
+  status: 'PENDING';
+}
 
+export interface InstrumentResponse extends ApiResponseBase {
+  data: {
+    id: string; // Assuming standard fields
+    ticker: string;
+    name: string;
+    status: string;
+  }
+}
 
 // export type ExtractionStatus = 'pending' | 'processing' | 'completed' | 'failed';
 
