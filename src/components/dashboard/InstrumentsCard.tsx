@@ -16,12 +16,12 @@ export function InstrumentsCard() {
             <span className="text-foreground">{instrumentStats?.find((s) => s.status === 'ACTIVE')?.count || 0}</span>
           </div>
           <div className="flex justify-between text-[12px] font-bold uppercase tracking-wider">
-            <span className="text-warning">Pendientes</span>
-            <span className="text-foreground">{instrumentStats?.find((s) => s.status === 'PENDING')?.count || 0}</span>
-          </div>
-          <div className="flex justify-between text-[12px] font-bold uppercase tracking-wider">
             <span className="text-info">Procesando</span>
             <span className="text-foreground">{instrumentStats?.find((s) => s.status === 'PROCESSING')?.count || 0}</span>
+          </div>
+          <div className="flex justify-between text-[12px] font-bold uppercase tracking-wider">
+            <span className="text-warning">Pendientes</span>
+            <span className="text-foreground">{instrumentStats?.find((s) => s.status === 'PENDING')?.count || 0}</span>
           </div>
           <div className="flex justify-between text-[12px] font-bold uppercase tracking-wider">
             <span className="text-muted-foreground">Archivados</span>
