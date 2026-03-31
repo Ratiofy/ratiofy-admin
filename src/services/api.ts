@@ -58,12 +58,12 @@ api.interceptors.request.use(async (config) => {
 // --- Instruments API ---
 
 export async function getInstrumentSummary(): Promise<InstrumentSummaryResponse> {
-  const { data } = await api.get<InstrumentSummaryResponse>('/instruments/stats/summary');
+  const { data } = await api.get<InstrumentSummaryResponse>('/instruments/stats/summary/');
   return data;
 }
 
 export async function createInstrument(payload: CreateInstrumentPayload): Promise<InstrumentResponse> {
-  const { data } = await api.post<InstrumentResponse>('/instruments', payload);
+  const { data } = await api.post<InstrumentResponse>('/instruments/', payload);
   return data;
 }
 
