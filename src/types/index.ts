@@ -22,7 +22,6 @@ export interface InstrumentSummaryResponse extends ApiResponseBase {
 export interface CreateInstrumentPayload {
   ticker: string;
   name: string;
-  status: 'PENDING';
 }
 
 export interface InstrumentResponse extends ApiResponseBase {

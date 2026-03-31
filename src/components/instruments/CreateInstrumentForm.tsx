@@ -19,8 +19,7 @@ export function CreateInstrumentForm({ onSuccess }: { onSuccess?: () => void }) 
       setIsSubmitting(true);
       const response = await createInstrument({
         ticker: ticker.trim().toUpperCase(),
-        name: name.trim(),
-        status: 'PENDING',
+        name: name.trim()
       });
 
       if (response.success) {
