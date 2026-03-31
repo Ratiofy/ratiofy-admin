@@ -2,11 +2,8 @@ import { useQuery } from '@tanstack/react-query';
 import { getInstrumentSummary } from '../services/api';
 
 export interface InstrumentSummary {
-    ACTIVE: number;
-    PENDING: number;
-    PROCESSING: number;
-    ARCHIVED: number;
-    ERROR: number;
+    status: string;
+    count: number;
 }
 
 export const useInstrumentsSummary = () => {

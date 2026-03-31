@@ -12,12 +12,9 @@ export interface ApiResponseBase {
 
 export interface InstrumentSummaryResponse extends ApiResponseBase {
   data: {
-    PENDING: number;
-    PROCESSING: number;
-    ACTIVE: number;
-    ARCHIVED: number;
-    ERROR: number;
-  }
+    status: string;
+    count: number;
+  }[]
 }
 export interface CreateInstrumentPayload {
   ticker: string;

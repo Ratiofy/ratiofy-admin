@@ -19,32 +19,32 @@ export default function Instruments() {
             <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <SingleStatCard
                     label="Activos"
-                    value={instrumentStats?.ACTIVE || 0}
+                    value={instrumentStats?.find((s) => s.status === 'ACTIVE')?.count || 0}
                     icon={SquareCheck}
                     color="text-green-500"
                 />
                 <SingleStatCard
                     label="Pendientes"
-                    value={instrumentStats?.PENDING || 0}
+                    value={instrumentStats?.find((s) => s.status === 'PENDING')?.count || 0}
                     icon={LayoutList}
                     color="text-yellow-500"
                 />
                 <SingleStatCard
                     label="Procesando"
-                    value={instrumentStats?.PROCESSING || 0}
+                    value={instrumentStats?.find((s) => s.status === 'PROCESSING')?.count || 0}
                     icon={Cpu}
                     color="text-blue-500"
                 />
                 <SingleStatCard
                     label="Archivados"
-                    value={instrumentStats?.ARCHIVED || 0}
+                    value={instrumentStats?.find((s) => s.status === 'ARCHIVED')?.count || 0}
                     icon={Archive}
                     color="text-gray-500"
                 />
-                {(instrumentStats?.ERROR ?? 0) > 0 && (
+                {(instrumentStats?.find((s) => s.status === 'ERROR')?.count ?? 0) > 0 && (
                     <SingleStatCard
                         label="Errores"
-                        value={instrumentStats?.ERROR || 0}
+                        value={instrumentStats?.find((s) => s.status === 'ERROR')?.count || 0}
                         icon={Archive}
                         color="text-red-500"
                     />

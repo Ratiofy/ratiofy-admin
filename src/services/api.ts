@@ -63,7 +63,7 @@ export async function getInstrumentSummary(): Promise<InstrumentSummaryResponse>
 }
 
 export async function createInstrument(payload: CreateInstrumentPayload): Promise<InstrumentResponse> {
-  const { data } = await api.post<InstrumentResponse>('/instruments', payload);
+  const { data } = await api.post<InstrumentResponse>('/instruments/', payload);
   return data;
 }
 
