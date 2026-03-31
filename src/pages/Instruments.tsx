@@ -1,7 +1,7 @@
 import AdminLayout from "../components/layout/AdminLayout";
 import { PageHeader } from "../components/common/PageHeader";
 import { CreateInstrumentForm } from "../components/instruments/CreateInstrumentForm";
-import { Archive, Ban, Cpu, Cross, LayoutList, SquareCheck } from "lucide-react";
+import { Archive, Ban, Cpu, LayoutList, SquareCheck } from "lucide-react";
 import { SingleStatCard } from "../components/common/SingleStatCard";
 import { useInstrumentsSummary } from "../hooks/useInstruments";
 
