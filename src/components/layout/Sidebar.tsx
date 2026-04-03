@@ -60,8 +60,10 @@ export default function Sidebar() {
           <UserButton
             appearance={{
               elements: {
-                userButtonAvatarBox: 'w-10 h-10 border-2 border-border shadow-sm',
-                userButtonPopoverCard: 'bg-surface border border-border shadow-xl',
+                userButtonAvatarBox:
+                  'w-10 h-10 border-2 border-border shadow-sm',
+                userButtonPopoverCard:
+                  'bg-surface border border-border shadow-xl',
                 userButtonPopoverActionButtonText: 'text-foreground',
                 userButtonPopoverActionButtonIcon: 'text-muted-foreground',
                 userButtonPopoverFooter: 'hidden',
@@ -69,8 +71,12 @@ export default function Sidebar() {
             }}
           />
           <div className="flex flex-col">
-            <span className="text-sm font-semibold text-foreground">Administrador</span>
-            <span className="text-xs text-muted-foreground">Próximamente...</span>
+            <span className="text-sm font-semibold text-foreground">
+              Administrador
+            </span>
+            <span className="text-xs text-muted-foreground">
+              Próximamente...
+            </span>
           </div>
         </div>
       </div>

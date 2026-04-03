@@ -12,19 +12,19 @@
 //       setLoading(true);
 //       setError(null);
 //       const response = await getDocuments();
-      
+
 //       // Robust handling: check if response is an array or if it's wrapped in { documents: [] }
 //       const rawDocuments = Array.isArray(response) ? response : (response.documents ?? []);
-      
+
 //       // Map backend fields to frontend interface if they differ
 //       const mappedDocs = rawDocuments.map((doc: any) => ({
 //         ...doc,
 //         id: String(doc.id),
 //         // Ensure status mapping (e.g. PENDING_COMPRESSION -> pending)
-//         status: (doc.status?.toLowerCase().includes('pending') ? 'pending' : 
+//         status: (doc.status?.toLowerCase().includes('pending') ? 'pending' :
 //                  doc.status?.toLowerCase().includes('process') ? 'processing' :
-//                  doc.status?.toLowerCase().includes('fail') ? 'failed' : 
-//                  doc.status?.toLowerCase().includes('complete') ? 'completed' : 
+//                  doc.status?.toLowerCase().includes('fail') ? 'failed' :
+//                  doc.status?.toLowerCase().includes('complete') ? 'completed' :
 //                  (doc.status || 'pending')) as any,
 //         // Fallback for missing fields
 //         original_name: doc.original_name || doc.filename || `${doc.ticker}_${doc.year}_${doc.quarter}.pdf`,

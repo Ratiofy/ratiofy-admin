@@ -1,7 +1,7 @@
 import axios from 'axios';
-import type { InstrumentSummaryResponse, CreateInstrumentPayload, InstrumentResponse } from '../types';
 
-const API_BASE_URL = import.meta.env.VITE_ADMIN_API_BASE_URL || 'http://localhost:8080/api';
+const API_BASE_URL =
+  import.meta.env.VITE_ADMIN_API_BASE_URL || 'http://localhost:8080/api';
 
 // Create Axios instance
 const api = axios.create({
@@ -55,17 +55,4 @@ api.interceptors.request.use(async (config) => {
 //   await api.delete(`/admin/documents/${documentId}`);
 // }
 
-// --- Instruments API ---
-
-export async function getInstrumentSummary(): Promise<InstrumentSummaryResponse> {
-  const { data } = await api.get<InstrumentSummaryResponse>('/instruments/stats/summary');
-  return data;
-}
-
-export async function createInstrument(payload: CreateInstrumentPayload): Promise<InstrumentResponse> {
-  const { data } = await api.post<InstrumentResponse>('/instruments/', payload);
-  return data;
-}
-
 export { api };
-export type { InstrumentSummaryResponse, CreateInstrumentPayload, InstrumentResponse };

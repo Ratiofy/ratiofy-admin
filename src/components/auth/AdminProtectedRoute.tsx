@@ -6,7 +6,9 @@ interface AdminProtectedRouteProps {
   children: ReactNode;
 }
 
-export default function AdminProtectedRoute({ children }: AdminProtectedRouteProps) {
+export default function AdminProtectedRoute({
+  children,
+}: AdminProtectedRouteProps) {
   return (
     <>
       <SignedIn>
@@ -31,7 +33,9 @@ function AdminRoleGate({ children }: { children: ReactNode }) {
       <div className="flex min-h-screen items-center justify-center bg-background">
         <div className="flex flex-col items-center gap-4 animate-fade-in">
           <div className="w-10 h-10 border-2 border-success border-t-transparent rounded-full animate-spin" />
-          <p className="text-muted-foreground text-sm font-medium">Verificando permisos...</p>
+          <p className="text-muted-foreground text-sm font-medium">
+            Verificando permisos...
+          </p>
         </div>
       </div>
     );
@@ -48,7 +52,9 @@ function AdminRoleGate({ children }: { children: ReactNode }) {
             <ShieldAlert size={32} className="text-destructive" />
           </div>
           <div>
-            <h2 className="text-2xl font-bold text-foreground mb-2">Acceso Restringido</h2>
+            <h2 className="text-2xl font-bold text-foreground mb-2">
+              Acceso Restringido
+            </h2>
             <p className="text-muted-foreground">
               No tienes permisos para acceder al panel de administración.
               Contacta a un administrador si crees que esto es un error.
@@ -56,10 +62,16 @@ function AdminRoleGate({ children }: { children: ReactNode }) {
           </div>
           <div className="pt-2">
             <p className="text-xs text-muted-foreground">
-              Usuario: <span className="text-foreground font-medium">{user?.primaryEmailAddress?.emailAddress}</span>
+              Usuario:{' '}
+              <span className="text-foreground font-medium">
+                {user?.primaryEmailAddress?.emailAddress}
+              </span>
             </p>
             <p className="text-xs text-muted-foreground">
-              Rol actual: <span className="text-foreground font-medium">{role || 'sin rol asignado'}</span>
+              Rol actual:{' '}
+              <span className="text-foreground font-medium">
+                {role || 'sin rol asignado'}
+              </span>
             </p>
           </div>
         </div>

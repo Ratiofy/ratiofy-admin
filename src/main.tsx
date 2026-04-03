@@ -9,7 +9,8 @@ import App from './App.tsx';
 import TokenBridge from './components/auth/TokenBridge.tsx';
 import './index.css';
 
-const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY || 'pk_test_placeholder_key';
+const PUBLISHABLE_KEY =
+  import.meta.env.VITE_CLERK_PUBLISHABLE_KEY || 'pk_test_placeholder_key';
 
 if (!PUBLISHABLE_KEY) {
   throw new Error('Missing Publishable Key');
@@ -62,5 +63,5 @@ createRoot(document.getElementById('root')!).render(
         richColors
       />
     </ClerkProvider>
-  </StrictMode>
+  </StrictMode>,
 );

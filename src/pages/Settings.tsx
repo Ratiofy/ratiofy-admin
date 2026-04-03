@@ -1,8 +1,8 @@
 // import { Settings as SettingsIcon } from 'lucide-react';
 // import AdminLayout from '../components/layout/AdminLayout';
 
-import { PageHeader } from "../components/common/PageHeader";
-import AdminLayout from "../components/layout/AdminLayout";
+import { PageHeader } from '../components/layout/PageHeader';
+import AdminLayout from '../components/layout/AdminLayout';
 
 // export default function Settings() {
 //   return (
@@ -36,12 +36,12 @@ import AdminLayout from "../components/layout/AdminLayout";
 // }
 
 export default function Settings() {
-    return (
-        <AdminLayout>
-            <PageHeader
-                title="Configuración"
-                description="Gestiona los parámetros globales de la plataforma Ratiofy."
-            />
-        </AdminLayout>
-    );
+  return (
+    <AdminLayout>
+      <PageHeader
+        title="Configuración"
+        description="Gestiona los parámetros globales de la plataforma Ratiofy."
+      />
+    </AdminLayout>
+  );
 }

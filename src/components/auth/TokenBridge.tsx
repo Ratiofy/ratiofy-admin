@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useAuth } from '@clerk/clerk-react';
-import { setTokenGetter } from '../../services/api';
+import { setTokenGetter } from '../../api/apiClient';
 
 /**
  * TokenBridge - Invisible component that runs inside ClerkProvider

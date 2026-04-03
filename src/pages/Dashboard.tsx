@@ -1,9 +1,9 @@
 import { FileText, Users, Server } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AdminLayout from '../components/layout/AdminLayout';
-import { InstrumentsCard } from '../components/dashboard/InstrumentsCard';
-import { PendingCard } from '../components/dashboard/PendingCard';
-import { PageHeader } from '../components/common/PageHeader';
+import { InstrumentsCard } from '../features/dashboard/components/InstrumentsCard';
+import { PendingCard } from '../features/dashboard/components/PendingCard';
+import { PageHeader } from '../components/layout/PageHeader';
 
 export default function Dashboard() {
   return (
@@ -23,7 +23,9 @@ export default function Dashboard() {
         </section>
 
         <section className="mb-10">
-          <h2 className="text-xl font-bold text-foreground mb-6">Acciones Rápidas</h2>
+          <h2 className="text-xl font-bold text-foreground mb-6">
+            Acciones Rápidas
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <QuickAction
               title="Subir Documento"
@@ -51,7 +53,9 @@ export default function Dashboard() {
 
         {/* System Status */}
         <section>
-          <h2 className="text-xl font-bold text-foreground mb-6">Estado del Sistema</h2>
+          <h2 className="text-xl font-bold text-foreground mb-6">
+            Estado del Sistema
+          </h2>
           <div className="admin-card">
             <div className="flex flex-wrap items-center gap-6 text-[11px] uppercase font-bold tracking-wider text-muted-foreground">
               <span className="text-foreground">Servicios:</span>
@@ -113,7 +117,13 @@ function QuickAction({
   );
 }
 
-function StatusDot({ label, status }: { label: string; status: 'healthy' | 'warning' | 'error' | 'pending' }) {
+function StatusDot({
+  label,
+  status,
+}: {
+  label: string;
+  status: 'healthy' | 'warning' | 'error' | 'pending';
+}) {
   const colors = {
     healthy: 'bg-success',
     warning: 'bg-warning',
@@ -125,7 +135,9 @@ function StatusDot({ label, status }: { label: string; status: 'healthy' | 'warn
       <span className={`w-1.5 h-1.5 rounded-full ${colors[status]}`} />
       <span className={status === 'pending' ? 'opacity-60' : ''}>{label}</span>
       {status === 'pending' && (
-        <span className="text-[9px] bg-muted px-1.5 py-0.5 rounded text-muted-foreground">PRE</span>
+        <span className="text-[9px] bg-muted px-1.5 py-0.5 rounded text-muted-foreground">
+          PRE
+        </span>
       )}
     </div>
   );
