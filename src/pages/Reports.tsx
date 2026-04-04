@@ -2,19 +2,19 @@ import AdminLayout from '../components/layout/AdminLayout';
 import { PageHeader } from '../components/layout/PageHeader';
 import { FileText, Upload } from 'lucide-react';
 
-export default function Documents() {
+export default function Reports() {
   return (
     <AdminLayout>
       <PageHeader
-        title="Documentos"
-        description="Gestiona los documentos de la plataforma Ratiofy."
+        title="Reportes"
+        description="Gestiona los reportes de la plataforma Ratiofy."
       />
 
       <div className="animate-fade-in">
         <header className="flex flex-col xl:flex-row justify-between xl:items-end gap-6 mb-10">
           <div>
             <h1 className="text-3xl font-bold text-foreground tracking-tight mb-2">
-              Gestión de Documentos
+              Gestión de Reportes
             </h1>
             <p className="text-muted-foreground font-medium">
               Carga y gestiona los informes financieros en PDF para su
@@ -25,7 +25,7 @@ export default function Documents() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
           <StatsCard
-            label="Total Documentos"
+            label="Total Reportes"
             value={1}
             icon={FileText}
             color="text-foreground"
@@ -58,7 +58,7 @@ export default function Documents() {
             </div>
             <div>
               <h2 className="text-lg font-bold text-foreground">
-                Cargar Documento
+                Cargar Reporte
               </h2>
               <p className="text-xs text-muted-foreground">
                 El archivo se envía al backend para persistencia en S3.
@@ -75,7 +75,7 @@ export default function Documents() {
               {/* <FileText size={20} /> */}
             </div>
             <h2 className="text-lg font-bold text-foreground">
-              Tracking de Documentos
+              Tracking de Reportes
             </h2>
           </div>
           {/* <DocumentTable

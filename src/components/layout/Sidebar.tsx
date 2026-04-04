@@ -12,7 +12,7 @@ import {
 const navItems = [
   { path: '/', label: 'Dashboard', icon: LayoutDashboard },
   { path: '/instruments', label: 'Instrumentos', icon: SquareChartGantt },
-  { path: '/documents', label: 'Documentos', icon: FileText },
+  { path: '/reports', label: 'Reportes', icon: FileText },
   { path: '/settings', label: 'Configuración', icon: Settings },
 ];
 

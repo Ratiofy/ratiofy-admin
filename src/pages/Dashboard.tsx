@@ -18,7 +18,7 @@ export default function Dashboard() {
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-10">
             <InstrumentsCard />
             <PendingCard title="Usuarios" />
-            <PendingCard title="Documentos" />
+            <PendingCard title="Reportes" />
           </div>
         </section>
 
@@ -28,10 +28,10 @@ export default function Dashboard() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <QuickAction
-              title="Subir Documento"
+              title="Subir Reporte"
               description="Subir un nuevo PDF para extracción y análisis"
               icon={FileText}
-              to="/documents"
+              to="/reports"
               disabled
             />
             <QuickAction
